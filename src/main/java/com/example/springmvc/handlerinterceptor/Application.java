@@ -1,5 +1,6 @@
 package com.example.springmvc.handlerinterceptor;
 
+import com.example.springmvc.handlerinterceptor.handlerinterceptor.LogCookieHandlerInterceptor;
 import com.example.springmvc.handlerinterceptor.handlerinterceptor.LogTimeHandlerInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +21,7 @@ class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LogTimeHandlerInterceptor());
+        registry.addInterceptor(new LogCookieHandlerInterceptor());
         super.addInterceptors(registry);
     }
 }
